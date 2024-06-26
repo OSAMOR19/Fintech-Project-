@@ -9,7 +9,7 @@ const Price = () => {
   };
   return (
     <React.Fragment>
-      <section className="section" style={gradientBackgroundStyle}>
+      <section className="section" id='pricing' style={gradientBackgroundStyle}>
         <div className="bg-overlay bg-overlay-pattern"></div>
         <Container>
           <Row className="justify-content-center">

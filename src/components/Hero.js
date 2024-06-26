@@ -9,52 +9,61 @@ const Hero = () => {
     background: "linear-gradient(90deg, #0E0D13 0%, #1D2339 100%)",
     // Add any other styles you want
   };
+
+  const handleImageHover = (e) => {
+    e.target.style.transform = "scale(1.05)";
+  };
+
+  const handleImageLeave = (e) => {
+    e.target.style.transform = "scale(1)";
+  };
+
   return (
     <React.Fragment>
       <section style={gradientBackgroundStyle}>
         <Container>
           <Row className="align-items-center gy-2">
-            <Col lg={6} className="order-2 order-lg-1">
-              <div className=" text-light mt-sm-3">
-                <h5 className="" style={{ color: "#DAFA7E" }}>
+            <Col lg={6} className="order-2 mt-5 order-lg-1">
+              <div className="text-light mt-sm-5">
+                <h5 style={{ color: "#DAFA7E" }} className="mb-1">
                   #1 INVOICE SOLUTIONS
                 </h5>
-                <h1 className=" fs-50 mb-3 ft-large mt-4 mb-3 fw-bold w-75">
-                  Streamline Your Invoicing challenges
+                <h1 className="fs-50 mb-3 ft-large mt-4 mb-3 fw-bold w-75">
+                  Streamline Your Invoicing Challenges
                 </h1>
                 <p className="mb-4 mt-3 w-75 ff-secondary">
                   Automate your financial processes and get paid faster with
-                  using our automated invoices generated.
+                  our automated invoice generation.
                 </p>
 
-                <Row>
+                <Row className="mb-3">
                   <ul className="list-group-horizontal">
                     <img
                       src={avatar1}
                       alt=""
-                      className="avatar-sm rounded-circle"
+                      className="avatar-sm rounded-circle me-2"
                     />
                     Very Affordable
                   </ul>
-                  <ul>
+                  <ul className="list-group-horizontal">
                     <img
                       src={avatar1}
                       alt=""
-                      className="avatar-sm rounded-circle"
+                      className="avatar-sm rounded-circle me-2"
                     />
                     Swift
                   </ul>
-                  <ul>
+                  <ul className="list-group-horizontal">
                     <img
                       src={avatar1}
                       alt=""
-                      className="avatar-sm rounded-circle"
+                      className="avatar-sm rounded-circle me-2"
                     />
                     Trusted
                   </ul>
                 </Row>
 
-                <div className="mt-4 g-5">
+              <div className="mt-4 mb-5">
                   <Button
                     to="/index"
                     className="btn btn-primary me-2"
@@ -71,16 +80,22 @@ const Hero = () => {
               </div>
             </Col>
 
-            <Col lg={5} sm={4} className=" ms-auto order-2 order-lg-2">
-              <div className="card-animate" style={{ height: "670px" }}>
+            <Col lg={5} sm={8} className="ms-auto order-1 order-lg-2">
+              <div
+                className="card-animate"
+                style={{ maxHeight: "400px", overflow: "hidden" }}
+              >
                 <img
                   src={img2}
                   alt=""
-                  className="img-fluid"
-                  style={{ maxWidth: "95%", transition: "transform 1.5s ease" }}
+                  className="img-fluid d-none d-lg-block"
+                  style={{
+                    maxWidth: "100%",
+                    transition: "transform 0.5s ease",
+                  }}
+                  onMouseEnter={handleImageHover}
+                  onMouseLeave={handleImageLeave}
                 />
-                onMouseEnter={(e) => (e.target.style.transform = "scale(1.05)")}
-                onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
               </div>
             </Col>
           </Row>

@@ -14,7 +14,7 @@ import img4 from "./Images/cardpic4.png";
 const Comprehensive = () => {
   return (
     <React.Fragment>
-      <section className="section" id="comprehensive">
+      <section className="section" id="services">
         <Container>
           <Row className="justify-content-center mt-5">
             <Col lg={8}>
